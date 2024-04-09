@@ -50,7 +50,7 @@ services:
         volumes:
             - microblogging-pgadmin:/var/lib/pgadmin
         ports:
-            - "${PGADMIN_PORT:-5050}:80"
+            - "${PGADMIN_PORT:-5051}:80"
         networks:
             - microblogging
     selenium:
