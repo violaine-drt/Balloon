@@ -9,6 +9,16 @@
             >{{ old('message') }}</textarea>
             <x-input-error :messages="$errors->get('message')" class="mt-2" />
             <x-primary-button class="mt-4">{{ __('Post') }}</x-primary-button>
+
+            {{-- <form action="{{ url('/images/upload') }}" method="POST" enctype="multipart/form-data">
+                @csrf --}}
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" name="image" id="image" class="form-control" required>
+                </div>
+            {{-- </form> --}}
+
+
         </form>
 
         <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">

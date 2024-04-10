@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -38,7 +39,17 @@ class PostController extends Controller
         //
         $validated = $request->validate([
             'message' => 'required|string|max:255',
+            'image' => 'required|image|max:3000'
         ]);
+
+        // Store the uploaded image in the storage directory
+        $imagePath = $request->file('image')->store('public/images');
+
+        $request->user()->posts()->create([
+            'message' => $validated['message'],
+            'image_path' => $imagePath, // Save the path to the image
+        ]);
+
         $request->user()->posts()->create($validated);
         return redirect(route('posts.index'));
     }
