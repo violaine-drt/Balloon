@@ -39,7 +39,7 @@ class PostController extends Controller
         //
         $validated = $request->validate([
             'message' => 'required|string|max:255',
-            'image' => 'required|image|max:3000'
+            'image' => 'required|image|max:30000'
         ]);
 
         // Store the uploaded image in the storage directory
@@ -47,7 +47,7 @@ class PostController extends Controller
 
         $request->user()->posts()->create([
             'message' => $validated['message'],
-            'image_path' => $imagePath, // Save the path to the image
+            'image_path' => $imagePath, 
         ]);
 
         $request->user()->posts()->create($validated);

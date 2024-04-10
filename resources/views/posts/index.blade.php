@@ -8,16 +8,16 @@
                 class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
             >{{ old('message') }}</textarea>
             <x-input-error :messages="$errors->get('message')" class="mt-2" />
-            <x-primary-button class="mt-4">{{ __('Post') }}</x-primary-button>
+            
 
             {{-- <form action="{{ url('/images/upload') }}" method="POST" enctype="multipart/form-data">
                 @csrf --}}
                 <div class="form-group">
                     <label for="image">Image</label>
-                    <input type="file" name="image" id="image" class="form-control" required>
+                    <input type="file" name="image" id="image" class="form-control">
                 </div>
             {{-- </form> --}}
-
+            <x-primary-button class="mt-4">{{ __('Post') }}</x-primary-button>
 
         </form>
 
