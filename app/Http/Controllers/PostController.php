@@ -117,6 +117,13 @@ class PostController extends Controller
     {
         //
         Gate::authorize('delete', $post);
+
+        $imageLink = $post->image_path;
+        $localLink = '../public';
+        $totalLink = $localLink.$imageLink;
+
+        unlink($totalLink);
+
         $post->delete();
         return redirect(route('posts.index'));
     }
