@@ -43,38 +43,36 @@ class PostController extends Controller
         //
         $validated = $request->validate([
             'message' => 'required|string|max:255',
-            'image' => 'required|image'
+            'image' => 'required|image|max:1000'
         ]);
 
-        print_r($validated);
+        // print_r($validated);
         
         // Store the uploaded image in the storage directory
         $imagePath = $request->file('image')->store('public/images');
-        print("AFTER IMAGEPATH");
+        // print("AFTER IMAGEPATH");
 
         // Retrieve the full URL of the stored image
         $imageUrl = Storage::url($imagePath);
-        print_r($imageUrl);
-        print("AFTER IMAGEURL");
+        // print_r($imageUrl);
+        // print("AFTER IMAGEURL");
         
         $request->user()->posts()->create([
-            print("1"),
             'message' => $validated['message'],
-            print("2"),
             'image_path' => $imageUrl, 
-            print("3"),
         ]);
         
        
-        print("AFTER REQUEST");
+        // print("AFTER REQUEST");
 
 
         // $request->user()->posts()->create($validated);
 
-        print("bonjour");
+        // print("bonjour");
 
-        return redirect(route('posts.index'));
-        // return redirect()->route('posts.index')->with("success!", "Post créé avec succès !");
+        // return redirect(route('posts.index'));
+        return redirect()->route('posts.index')->with("success!");
+        // return redirect()->route('posts.index')->with("success!", "Post créé avec succès !")->header("Cache-Control", "no-store, no-cache, must-revalidate");
 
     }
 
