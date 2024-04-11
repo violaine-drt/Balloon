@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -35,12 +36,44 @@ class PostController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        // print("bonjour");
+        // die;
+        // print_r($request->all());
+
         //
         $validated = $request->validate([
             'message' => 'required|string|max:255',
+            'image' => 'required|image|max:1000'
         ]);
-        $request->user()->posts()->create($validated);
-        return redirect(route('posts.index'));
+
+        // print_r($validated);
+        
+        // Store the uploaded image in the storage directory
+        $imagePath = $request->file('image')->store('public/images');
+        // print("AFTER IMAGEPATH");
+
+        // Retrieve the full URL of the stored image
+        $imageUrl = Storage::url($imagePath);
+        // print_r($imageUrl);
+        // print("AFTER IMAGEURL");
+        
+        $request->user()->posts()->create([
+            'message' => $validated['message'],
+            'image_path' => $imageUrl, 
+        ]);
+        
+       
+        // print("AFTER REQUEST");
+
+
+        // $request->user()->posts()->create($validated);
+
+        // print("bonjour");
+
+        // return redirect(route('posts.index'));
+        return redirect()->route('posts.index')->with("success!");
+        // return redirect()->route('posts.index')->with("success!", "Post créé avec succès !")->header("Cache-Control", "no-store, no-cache, must-revalidate");
+
     }
 
     /**
