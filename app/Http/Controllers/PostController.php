@@ -36,22 +36,46 @@ class PostController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        // print("bonjour");
+        // die;
+        // print_r($request->all());
+
         //
         $validated = $request->validate([
             'message' => 'required|string|max:255',
-            'image' => 'required|image|max:30000'
+            'image' => 'required|image'
         ]);
 
+        print_r($validated);
+        
         // Store the uploaded image in the storage directory
         $imagePath = $request->file('image')->store('public/images');
+        print("AFTER IMAGEPATH");
 
+        // Retrieve the full URL of the stored image
+        $imageUrl = Storage::url($imagePath);
+        print_r($imageUrl);
+        print("AFTER IMAGEURL");
+        
         $request->user()->posts()->create([
+            print("1"),
             'message' => $validated['message'],
-            'image_path' => $imagePath, 
+            print("2"),
+            'image_path' => $imageUrl, 
+            print("3"),
         ]);
+        
+       
+        print("AFTER REQUEST");
 
-        $request->user()->posts()->create($validated);
+
+        // $request->user()->posts()->create($validated);
+
+        print("bonjour");
+
         return redirect(route('posts.index'));
+        // return redirect()->route('posts.index')->with("success!", "Post créé avec succès !");
+
     }
 
     /**

@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-        <form method="POST" action="{{ route('posts.store') }}">
+        <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
             @csrf
             <textarea
                 name="message"
@@ -9,14 +9,13 @@
             >{{ old('message') }}</textarea>
             <x-input-error :messages="$errors->get('message')" class="mt-2" />
             
+            @csrf
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" name="image" id="image" class="form-control">
+            </div>
+            <x-input-error :messages="$errors->get('image')" class="mt-2" />
 
-            {{-- <form action="{{ url('/images/upload') }}" method="POST" enctype="multipart/form-data">
-                @csrf --}}
-                <div class="form-group">
-                    <label for="image">Image</label>
-                    <input type="file" name="image" id="image" class="form-control">
-                </div>
-            {{-- </form> --}}
             <x-primary-button class="mt-4">{{ __('Post') }}</x-primary-button>
 
         </form>
@@ -60,7 +59,8 @@
                                 </x-dropdown>
                             @endif
                         </div>
-                        <p class="mt-4 text-lg text-gray-900">{{ $post->message }}</p>
+                        <p class="mt-4 text-lg text-gray-900 text-green-300">{{ $post->message }}</p>
+                        <img class="w-100% h-auto" src="{{ $post->image_path }}"  />
                     </div>
                 </div>
             @endforeach
