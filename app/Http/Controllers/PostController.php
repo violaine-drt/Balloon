@@ -22,6 +22,11 @@ class PostController extends Controller
             'posts' => Post::with('user')->latest()->get(),
         ]);
     }
+    public function getUserWallPosts($userId){
+
+        $userPosts = Post::where('user_id', $userId)->get();
+        return view('userwall', ['userPosts' => $userPosts]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -36,18 +41,14 @@ class PostController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        // print("bonjour");
-        // die;
-        // print_r($request->all());
+       
 
-        //
         $validated = $request->validate([
             'message' => 'required|string|max:255',
             'image' => 'required|image|max:1000'
         ]);
 
-        // print_r($validated);
-        
+
         // Store the uploaded image in the storage directory
         $imagePath = $request->file('image')->store('public/images');
         // print("AFTER IMAGEPATH");
