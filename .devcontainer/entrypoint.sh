@@ -12,3 +12,8 @@ apt-get update
 apt-get install -y libpq-dev \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pdo pdo_pgsql pgsql
+
+# Install GD extension for image manipulation
+apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev \
+    && docker-php-ext-configure gd -with-freetype=/usr/include/ -with-jpeg=/usr/include/ \
+    && docker-php-ext-install gd
