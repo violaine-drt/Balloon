@@ -23,14 +23,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/userwall', function () {
-    return view('userwall');
-})->name('userwall');
+Route::get('/userwall/{userId}', [PostController::class, 'getUserWallPosts'])->name('userwall');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Route::delete('/biography', [ProfileController::class, 'edit'])->name('biography.edit');
+    Route::patch('/biography', [ProfileController::class, 'updateBiography'])->name('biography.update');
 });
 
 Route::resource('posts', PostController::class)

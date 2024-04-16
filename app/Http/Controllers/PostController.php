@@ -23,7 +23,6 @@ class PostController extends Controller
         ]);
     }
     public function getUserWallPosts($userId){
-
         $userPosts = Post::where('user_id', $userId)->get();
         return view('userwall', ['userPosts' => $userPosts]);
     }
