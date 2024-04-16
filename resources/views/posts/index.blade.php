@@ -60,7 +60,7 @@
                                 </x-dropdown>
                             @endif
                         </div>
-                        <p class="mt-4 text-lg text-gray-900 text-green-300">{{ $post->message }}</p>
+                        <p class="mt-4 text-lg text-gray-900">{{ $post->message }}</p>
                         <img class="w-100% h-auto" src="{{ $post->image_path }}"  />
                     </div>
                 </div>

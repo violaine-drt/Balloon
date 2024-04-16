@@ -1,5 +1,33 @@
+@php
+
+    use App\Models\User;
+
+    $currentUrl = url()->current();
+
+    $parts = explode('/', $currentUrl);
+    $id = end($parts);
+
+    $user = User::find($id); // Retrieve the user by ID
+
+    if ($user) {
+        $name = $user->name; // Extract the "name" column value
+        $biography = $user->biography;
+    } else {
+        $name = 'Not found'; // Handle case when no record is found
+        $biography = "😭";
+    }
+
+
+
+@endphp
+
 <x-app-layout>
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <div class="flex flex-col gap-5">
+            <p class="text-5xl font-bold">{{ $name }}</p>
+            <p class="text-xl font-semibold">{{ $biography }}</p>
+        </div>
         <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
             @foreach ($userPosts as $post)
                 <!-- Afficher le post -->
@@ -40,7 +68,7 @@
                                     </x-dropdown>
                                 @endif
                             </div>
-                            <p class="mt-4 text-lg text-gray-900 text-green-300">{{ $post->message }}</p>
+                            <p class="mt-4 text-lg text-gray-900">{{ $post->message }}</p>
                             <img class="w-100% h-auto" src="{{ $post->image_path }}"  />
                         </div>
                     </div>
