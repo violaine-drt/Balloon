@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Http\Requests\BiographyUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,6 +36,18 @@ class ProfileController extends Controller
         $request->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
+    }
+
+    public function updateBiography(BiographyUpdateRequest $request): RedirectResponse
+    {
+        $request->user()->fill($request->validated());
+    
+        // Update only the biography field
+        $request->user()->biography = $request->biography;
+    
+        $request->user()->save();
+    
+        return Redirect::route('profile.edit')->with('status', 'biography-updated');
     }
 
     /**
