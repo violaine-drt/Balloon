@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Disable XDebug because it is uglifully slow on Windows+WSL
-mv /usr/local/etc/php/conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini.disabled
+# Configure XDebug to not start by default, and to support coverage
+sed -i 's/xdebug.mode = debug/xdebug.mode = debug,coverage/g' /usr/local/etc/php/conf.d/xdebug.ini
+sed -i 's/xdebug.start_with_request = yes/xdebug.start_with_request = no/g' /usr/local/etc/php/conf.d/xdebug.ini
+echo "xdebug.discover_client_host=1" >> /usr/local/etc/php/conf.d/xdebug.ini
 
 
 apt-get update
