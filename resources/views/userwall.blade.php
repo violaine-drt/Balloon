@@ -95,7 +95,7 @@
                                 @endif
                             </div>
                             <p class="mt-4 text-lg text-gray-900">{{ $post->message }}</p>
-                            <img class="w-100% h-auto" src="{{ $post->image_path }}"  />
+                            <img class="x-auto w-full h-auto" src="{{ $post->image_path }}"  />
                         </div>
                     </div>
                 @endforeach
