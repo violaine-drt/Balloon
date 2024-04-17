@@ -24,7 +24,7 @@ return new class extends Migration
     {
         //
         Schema::table('users', function (Blueprint $table) {
-            $table->text('biography')->nullable(false)->change();
+            $table->text('biography')->nullable()->change();
     });
     }
 };
