@@ -25,13 +25,34 @@
         <div class="flex flex-col gap-5">
             <p class="text-5xl font-bold">{{ $name }}</p>
             <p class="text-xl font-semibold">{{ $biography }}</p>
- 
+<!--Test affichage nb followers-->   
+            <p class="text-xl font-semibold">{{ $user->followers()->count() }} followers</p>
+            <p class="text-xl font-semibold">this users follows  {{ $user->followings()->count() }}  persons</p>
+
+<!--Afficher les messages de session définis dans le controller -->     
     @if(session()->has('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
     @endif
-  
+         <!--On ne peut follow/unfollow que les autres utilisateurs-->     
+         @if (!$user->is(auth()->user()))
+         <div class="mt-4 space-x-2">
+            <!--Condition pour afficher follow ou unfollow--> 
+             @if(auth()->user()->follows($user))
+             <form method="POST" action="{{ route('users.unfollow',$user ->id)}}">
+                 @csrf
+             <x-primary-button>{{ __('Unfollow') }}</x-primary-button>
+             </form>
+
+             @else
+             <form method="POST" action="{{ route('users.follow',$user ->id)}}">
+                 @csrf
+             <x-primary-button>{{ __('Follow') }}</x-primary-button>
+             </form>
+             @endif
+         </div>
+         @endif
         </div>
         <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
             @foreach ($userPosts as $post)
@@ -79,22 +100,6 @@
                     </div>
                 @endforeach
             </div>
-            @if (!$user->is(auth()->user()))
-            <div class="mt-4 space-x-2">
-                @if(auth()->user()->follows($user))
-                <form method="POST" action="{{ route('users.unfollow',$user ->id)}}">
-                    @csrf
-                <x-primary-button>{{ __('Unfollow') }}</x-primary-button>
-                </form>
-
-                @else
-                <form method="POST" action="{{ route('users.follow',$user ->id)}}">
-                    @csrf
-                <x-primary-button>{{ __('Follow') }}</x-primary-button>
-                </form>
-                @endif
-            </div>
-            @endif
         </div>
     </div>
 </x-app-layout>
