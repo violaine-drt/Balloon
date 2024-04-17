@@ -15,8 +15,8 @@
 
         <div>
             <x-input-label for="biography" :value="__('Biography')" />
-            <x-text-input id="biography" name="biography" type="text" class="mt-1 block w-full" :value="old('biography', $user->biography)" required autofocus autocomplete="biography" />
-            {{-- <textarea id="biography" name="biography" type="text" class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="old('biography', $user->biography)" required autofocus autocomplete="biography" /></textarea> --}}
+            {{-- <x-text-input id="biography" name="biography" type="text" class="mt-1 block w-full" :value="old('biography', $user->biography)" required autofocus autocomplete="biography" /> --}}
+            <textarea id="biography" name="biography" type="text" class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="old('biography', $user->biography)" required autofocus autocomplete="biography">{{ old('biography', $user->biography) }}</textarea>
             <x-input-error class="mt-2" :messages="$errors->get('biography')" />
         </div>
 
