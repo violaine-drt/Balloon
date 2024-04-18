@@ -1,6 +1,6 @@
 # Plateforme de micro-blogging
 
-readme.gif
+
 ![filtres](https://github.com/violaine-drt/Balloon/blob/main/readme.gif)
 
 
