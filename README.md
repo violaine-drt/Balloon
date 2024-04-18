@@ -1,5 +1,9 @@
 # Plateforme de micro-blogging
 
+readme.gif
+![filtres](https://github.com/violaine-drt/Balloon/blob/main/readme.gif)
+
+
 ## [Windows] Pré-requis : installer WSL 2
 
 🟡 Si vous ne l'avez toujours pas fait, installez WSL 2. Voir la [doc officielle de WSL 2](https://learn.microsoft.com/fr-fr/windows/wsl/install).
