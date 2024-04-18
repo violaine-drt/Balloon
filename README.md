@@ -1,292 +1,169 @@
-# Balloon - Plateforme de micro-blogging <img src="https://github.com/violaine-drt/Balloon/blob/main/balloon.png" width=15% height=15%>
+# Balloon - Plateforme de micro-blogging 
 
+"Balloon" is the first step towards a microblogging network, developed as part of a school collective project at **_Ada Tech School_**.
 
 ![filtres](https://github.com/violaine-drt/Balloon/blob/main/readme.gif)
 
+## Project's context and objectives
 
+"Balloon" was designed and developed  as a school project, over a period of 8 days with the participation of 3 students, all beginner developers.
 
-[![made-with-javascript](https://img.shields.io/badge/Made%20with-Javascript-326996.svg)](https://www.javascript.com)
-[![made-with-javascript](https://img.shields.io/badge/Made%20with-React+Vite-326996.svg)](https://www.javascript.com)
-[![made-with-javascript](https://img.shields.io/badge/Made%20with-NodeJS+Express-326996.svg)](https://www.javascript.com)
-[![made-with-javascript](https://img.shields.io/badge/Made%20with-ChakraUI-326996.svg)](https://www.javascript.com)
-[![made-with-javascript](https://img.shields.io/badge/Made%20with-MySQL-326996.svg)](https://www.javascript.com)
+The functional objectives of the project were to develop a minimalist microblogging platform, offering the following features:
 
-# Project - "Les Chaises Musicales" <img src="https://github.com/adatechschool/projet-collectif-plateforme-de-meubles-leschaisesmusicales/blob/main/front/src/assets/images/logo.png" width=15% height=15%>
+Creating posts associating an image and text,
+Finding them grouped within a personal page,
+Viewing posts from other members,
+Authenticating,
+Logging in,
+Editing one's profile.
 
-"Les Chaises Musicales" is a website for selling second-hand furniture, and even antiques, developed as part of a school collective project at **_Ada Tech School_**.
+The educational objectives included:
 
-
-![filtres](https://github.com/adatechschool/projet-collectif-plateforme-de-meubles-leschaisesmusicales/assets/146881805/aa0e85d3-daa9-4748-872e-f83cf429e77b)
-
-
-## Project's context
-
-"Les Chaises Musicales" was designed and developed over a period of two weeks with the participation of 10 learners. The participants were divided into two teams of 5 individuals, with one focusing on backend development and the other on frontend. At the end of the first week, the teams switched between the two technology stacks for a better overall understanding of the project.
+Getting familiar with a project with a rich structure due to the architecture implemented by Laravel
+Discovering the PHP framework Laravel
+Exploring Docker containerization
+Conducting feature tests to achieve a minimum of 50% test coverage
 
 ## My role in the project
 
-I was part of the team dedicated to building the back-end. After 5 days, we switched teams as intented in the project's rules
-- Regarding back-end features, we launched the server on node and express.js. We designed the database and made the hosting choices for it. We also started building the API and defining the routes we wanted to use.
 
-- When our team then switched over to the front-end, part of the time was spent understanding the front-end codebase and the features that our colleagues had started to implement. I then took charge of the filtering functionality on the homepage.
+Because of the new nature of the technologies used (Laravel, Docker), a certain amount of documentation time was necessary, and we chose to use a lot of mob programming in this project to build team skills and guarantee a homogeneity of knowledge. So we did a lot of group work. What I particularly appreciated about this project was the implementation of feature tests, and the creation of new data through the MVC architecture proposed by Laravel.
 
-
-## Objectives
-
-The project aimed to meet the needs of a client who wanted an interactive website allowing users to sell their furniture. Additionally, the client wanted an admin page to manage product stock.
-For us, the major challenge was to learn how to properly communicate through the whole process.
-
-### Backend:
-
-![Architecture back](/front/src/assets/images/archi%20back.png "Archi back")
-
-- Design and development of the **RESTful API** with **Node.js** and **Express.js**.
-- Integration of a database to store product and user information with **AlwaysData**(which manages data hosting in the cloud, in the form of a **MySQL** database.), and **DBeaver** (which is a downloadable graphical interface that allows you to manage the database, visualizes it, and adds/removes tables.).
-- Features implementation such as user, product, and order management.
-
-### Frontend:
-
-![Architecture front](/front/src/assets/images/Archi%20front.png "Archi front")
-
-- Design and development of the user interface with **JavaScript** and **Vite** framework.
-- Use of the **React.js** and **Chakra-UI** libraries to create reusable and dynamic components.
-- Integration of features such as page navigation, product filter, display of product details, admin navigation.
 
 ## Collaboration and Communication
 
-Collaboration between the two teams was essential to ensure the project's success. Daily meetings were held to share progress, discuss encountered challenges, and align priorities. We used a project management tool, **Trello**, to track tasks and deadlines.
+Collaboration between the three of us was essential to ensure the project's success. Daily meetings were held to share progress, discuss encountered challenges, and align priorities. We used a project management tool, **Trello**, to track tasks and deadlines. 
+We're particularly happy with the way we've defined our MVP, and stayed committed to it. This enabled us to stay focused on the project's pedagogical objectives and produce a minimal yet functional result, while at the same time familiarizing ourselves with the use of new technologies.
 
-![Organization with Trello](/front/src/assets/images/trello.jpg "Trello")
 
-# Conclusion
 
-"Les Chaises Musicales" is the outcome of intensive teamwork and effective collaboration among project members. Despite the time constraints, the project was successfully delivered, meeting the client's needs and showcasing the skills acquired by the learners during their training.
-
-# How to install and run the project:
-
-1. Create your database (on alwaysdata for example!)
-2. To link your database to the project, create a file named 'connexionDB.json' in the 'back' folder and fill it with your informations, following this model :
-
-   `{
-"host": "Tape here the url of your database...",
-"user": "Tape here your user name...",
-"password": "Tape here your password...",
-"database": "Tape here the nam of your DB..."
-}`
-
-3. Go in 'back' folder, open your terminal, and run this command :
-   `npm install`
-   `npm start`
-
-4. Go in 'front' folder, open your terminal and run this command :
-   `npm install`
-   `npm run dev`
-
-There you go !
+Follow the instructions below !
 
 # Credits
-
-1st week front :
-
-- Lise Q.
-- Mehdi B.
-- Promise H.
-- Loïck M.
-- Emilie R.
-
-1st week back :
-
-- Gaëtane S.
-- Edith M.
-- Violaine D.
-- Pierre P.
-- Jean-Clément
+Mathurin S, Maguelone G, Violaine D
 
 # License
 
 GNU GPL v3.
 
-## [Windows] Pré-requis : installer WSL 2
 
-🟡 Si vous ne l'avez toujours pas fait, installez WSL 2. Voir la [doc officielle de WSL 2](https://learn.microsoft.com/fr-fr/windows/wsl/install).
+# How to install and run the project:
 
-En résumé, WSL (= Windows Sub-system for Linux) installe un système d'exploitation Linux par dessus votre système d'exploitation Windows, mais sans la partie graphique.
+[Windows] Prerequisites: Install WSL 2
+🟡 If you haven't already, install WSL 2. See the official WSL 2 documentation.
 
-Ce (sous-)système Linux, est un vrai OS, il vient avec un Terminal de commande et son propre système de fichiers, **indépendant de votre système de fichiers Windows**.
+In summary, WSL (= Windows Sub-system for Linux) installs a Linux operating system on top of your Windows operating system, but without the graphical part.
 
-🚩 Pour un environnement de développement optimal, nous vous recommandons fortement d'utiliser ce système Linux **pour tous vos projets**, ainsi que pour tous les outils ou librairies associées que vous seriez amené à installer. Utilisez donc toujours votre shell WSL, et créez vos fichiers et projets toujours sur le système de fichiers WSL.
+This Linux (sub-)system is a real OS, it comes with a command terminal and its own file system, independent of your Windows file system.
 
-Pourquoi ?
-- Les outils de shell Linux sont aujourd'hui un standard dans le développement.
-- Intéragir depuis le shell WSL avec des fichiers existants sur votre système de fichiers Windows peut vous exposer à des problèmes de (fortes) lenteurs. Avec Docker, cela peut même devenir quasi inutilisable. Faites-vous du bien, utilisez WSL par défaut 🫶
+🚩 For an optimal development environment, we strongly recommend using this Linux system for all your projects, as well as for any associated tools or libraries you may need to install. Always use your WSL shell and create your files and projects on the WSL file system.
 
-Sur le site officiel de WSL, vous trouverez plus d'infos sur le [Stockage de fichiers et performances dans les systèmes de fichiers](https://learn.microsoft.com/fr-fr/windows/wsl/filesystems#file-storage-and-performance-across-file-systems).
+Why?
 
+Linux shell tools are now a standard in development.
+Interacting from the WSL shell with existing files on your Windows file system can expose you to (significant) slowness issues. With Docker, it can even become almost unusable. Do yourself a favor, use WSL by default 🫶
+On the official WSL website, you'll find more information about File Storage and Performance Across File Systems.
 
-##  [Windows / Mac / Linux] Pré-requis : installer Docker 
+[Windows / Mac / Linux] Prerequisites: Install Docker
+🟡 Install Docker via the official Docker website.
 
-🟡 Installer Docker via le [site officiel de Docker](https://docs.docker.com/get-docker/).
+For Windows, choose the Docker installation option with WSL 2.
 
-Pour les Windows, choisir l'option d'installation de Docker **avec WSL 2**.
+🟡 Then, make sure it's running locally on your machine:
 
----
-
-🟡 S'assurer ensuite qu'il tourne en local sur votre machine :
-
-```
+Copy code
 docker info
-```
+[Windows] Prerequisites: Clone the project 🚩on the Linux file system (WSL)🚩
+🟡 If you've cloned this microblogging template project directly on the WSL file system, congratulations, you've followed the first prerequisite well, you can move on to the next step 🎉
 
+If this template project is on your Windows file system, clone it again, but this time on the WSL file system.
 
-## [Windows] Pré-requis : cloner le projet 🚩sur le système de fichiers Linux (WSL)🚩
+🚩 How to clone the project on the WSL file system?
 
-🟡 Si vous avez cloné ce template projet microblogging directement sur le filesystem WSL, bravo vous avez bien suivi le premier pré-requis, vous pouvez passer à l'étape suivante 🎉
+Open the WSL terminal
+Navigate to your HOME directory on your WSL file system
+bash
+Copy code
+cd ~
+Make sure your current directory does not start with /mnt/c/.
+If it starts with /mnt/c/, that's not good, because it means you're still on the Windows file system, as mentioned in the documentation on WSL file systems.
+If you're indeed on the WSL file system, that's good, create or navigate to your project directory, then clone the project as usual.
+[Windows / Mac / Linux] Prerequisites: Configure the project development environment
+This project has been pre-configured to allow for a quick and automatic installation of all its dependencies (PHP command-line tools, Laravel and its libraries, VSCode extensions adapted to PHP development). For this, we'll use the "Dev Containers" feature of VSCode.
 
-Si ce template projet se trouve sur votre système de fichiers Windows, clonez-le de nouveau, mais cette fois-ci sur le système de fichiers WSL.
+🟡 Open the project in VSCode. The files and folders of the repo should constitute the root of the project's tree structure under VS Code.
 
----
+❗️ Open the project directly from the root folder, via "Open Folder", or via code .. The Dev Container extension doesn't work from a "workspace", so don't open the folder via "Add Folder to Workspace".
 
-🚩 Comment cloner le projet sur le système de fichiers WSL ?
+🟡 Copy the .env.example file to .env
 
-- Ouvrez le terminal WSL
-- Rendez-vous dans votre répertoire `HOME` de votre système de fichiers WSL
-    ```
-    cd ~
-    ```
-- Assurez-vous que votre répertoire courant ne commence pas par `/mnt/c/`.
-
-- S'il commence par `/mnt/c/`, ce n'est pas bon, car cela signifie que vous êtes toujours sur systeme de fichiers Windows, comme mentionné dans la documentation sur les [systèmes de fichiers de WSL](https://learn.microsoft.com/fr-fr/windows/wsl/filesystems#file-storage-and-performance-across-file-systems).
-
-- Si vous êtes bien sur le système de fichiers WSL, c'est bon, créez ou allez dans votre répertoire projet, puis clonez le projet de manière classique.
-  
-
-##  [Windows / Mac / Linux] Pré-requis : configurer l'environnement de développement du projet
-
-Ce projet a été pré-configuré pour vous permettre une installation rapide et automatique de toutes ses dépendances (outils de ligne de commandes PHP, Laravel et ses librairies, des extensions VSCode adaptées au développement PHP). Pour cela on va utiliser la fonctionnalité de ["Dev Containers" de VSCode](https://code.visualstudio.com/docs/devcontainers/containers).
-
----
-
-🟡 Ouvrir le projet dans VSCode. Les fichiers et dossiers du repo doivent constituer **la racine** de l'arborescence du projet sous VS Code.
-
-❗️ Ouvrez bien le projet directement depuis le dossier racine, via "Open Folder", ou via `code .`. L'extension Dev Container ne fonctionne pas depuis un "workspace", donc n'ouvrez pas le dossier via "Add Folder to Workspace".
-
----
-
-🟡 Copier le fichier `.env.example` vers `.env`
-
-```
+bash
+Copy code
 cp .env.example .env
-```
+❗️ This step is essential to allow for the proper configuration of the project's Docker environment.
 
-❗️ Cette étape est **essentielle** pour permettre la bonne configuration de l'environnement Docker du projet.
+🟡 Install the VSCode extension "Dev Containers"
 
----
+🟡 Reopen the project in VSCode inside Docker using the "Reopen in Container" command
 
-🟡 Installer l'extension VSCode "Dev Containers"
+The project should open normally in a new VSCode window, and start downloading Docker images, then building and running the associated containers. This may take a few minutes depending on network bandwidth and your machine's power.
 
----
+At this stage, VSCode should normally prompt you to open the Docker logs, do so, try to understand what's happening there, and make sure there are no errors.
 
-🟡 Ré-ouvrir le projet dans VSCode **dans Docker** avec la commande "Reopen in Container"
+❓ Once finished, your project is running "under Docker". What does that mean to you?
 
-Le projet s'ouvre normalement dans une nouvelle fenêtre VSCode, et démarre le téléchargement des images Docker, puis la construction et l'exécution des containers associés. Cela peut prendre quelques minutes en fonction de la bande passante réseau et de la puissance de votre machine.
+❓ Also, take a look at the installed VSCode extensions. Where do these PHP / Laravel extensions come from?
 
-À cette étape, VSCode vous propose normalement d'ouvrir les logs Docker, faites-le, essayez de comprendre ce qui s'y déroule, et assurez-vous qu'il n'y ait pas d'erreur.
+Start the Laravel application
+🟡 Open the VSCode terminal.
 
-❓ Une fois terminé, votre projet tourne "sous Docker". Selon vous, qu'est ce que cela signifie ?
+❓ Pay close attention to the prompt of your VSCode terminal. Where do you think this terminal is running?
 
-❓ Observez également les extensions VSCode installées. D'où viennent ces extensions PHP / Laravel ?
+🟡 Install PHP dependencies via composer
 
-
-## Démarrer l'application Laravel
-
-🟡 Ouvrir le terminal de VSCode.
-
-❓ Observez-bien le prompt de votre terminal VSCode. Selon vous, où s'exécute ce terminal ?
-
----
-
-🟡 Installer les dépendances PHP via `composer`
-
-```
+Copy code
 composer install
-```
+Composer is the default package manager for PHP (equivalent to npm in Node/JS). The project dependencies (i.e., necessary external libraries) are described in the composer.json file. Once downloaded, they are installed in the vendor directory.
 
-Composer est le package manager par défaut de PHP (l'équivalent de `npm` en Node/JS). Les dépendances du projet (i.e. les librairies externes nécessaires) sont décrites dans le fichier `composer.json`. Une fois téléchargées elles sont installées dans le dossier `vendor`.
+❓ Do you think we should commit this vendor directory to the project's git?
 
-❓ Selon vous, doit-on commiter ce dossier `vendor` dans le git du projet ?
+🟡 Generate your Laravel application encryption key
 
----
-
-🟡 Générer votre "application encryption key" nécessaire à toute application Laravel
-
-```
+vbnet
+Copy code
 php artisan key:generate
-```
+This command generates a key which is then stored in the APP_KEY variable of your .env file.
 
-Cette commande génère une clé qui est ensuite stockée dans la variable `APP_KEY` de votre `.env`.
+🟡 Launch the internal web server of Laravel
 
----
-
-🟡 Lancer le serveur web interne à Laravel
-
-```
+Copy code
 php artisan serve
-```
+You should see the default Laravel page by opening the indicated URL (http://127.0.0.1:8000 if everything goes well).
 
-Vous devriez voir la page par défaut de Laravel en ouvrant l'url indiquée (http://127.0.0.1:8000 si tout se passe bien).
+🎉 Congratulations, you've done it, you have a Laravel application running under Docker!
 
-🎉 Bravo, vous l'avez fait, vous avez une application Laravel qui tourne sous Docker !
+At this point, take the time to familiarize yourself with how Laravel works, by going through the official documentation (highly recommended) or by following some tutorials. See the links at the end of this README.
 
-À ce stade, prenez le temps de vous familiariser avec le fonctionnement de Laravel, en parcourant la doc officielle (fortement recommandé) ou en suivant quelques tutos. Voir les liens à la fin de ce README.
+Database Management (PostgreSQL)
+🟡 Access the "pgAdmin" admin interface
 
+❓ By inspecting the docker-compose.yml (and possibly the .env), can you deduce the connection URL to "pgAdmin", as well as its login credentials?
 
-## Gestion de la base de données (PostgreSQL)
+🟡 Once connected to "pgAdmin", configure the connection to your local database by adding a new "server".
 
-🟡 Accéder à l'interface d'admin "pgAdmin"
+The login credentials are the same as those configured in the docker-compose.yml (and the .env).
 
-❓ En inspectant le `docker-compose.yml` (et éventuellement le `.env`) pouvez-vous en déduire l'url de connexion à "pgAdmin", ainsi que ses identifiants de connexion ?
+❗️ An important detail related to Docker: the connection "host" corresponds to the PostgreSQL URL inside the Docker network. Instead of searching for the internal IP address of your PG (which is entirely possible if you want an additional challenge), you can use directly the name defined within the docker-compose.yml for the PG service (= pgsql).
 
----
+🎉 Once connected, you should see a database named microblogging (i.e., the name corresponding to the DB_DATABASE variable in .env). Note that the database exists but is empty.
 
-🟡 Une fois connecté à "pgAdmin", configurer la connexion à votre base de données locale, en ajoutant un nouveau "server".
+🟡 Initialize the database by performing the existing default Laravel migrations.
 
-Les identifiants de connexion sont les mêmes que ceux configurés dans le `docker-compose.yml` (et le `.env`).
-
-❗️ Un détail important lié à Docker : le "host" de connexion correspond à l'url du PostgreSQL **à l'intérieur** du réseau Docker. Plutôt que de chercher l'adresse IP interne de votre PG (ce qui est tout à fait possible si vous avez envie d'un défi supplémentaire), vous pouvez utiliser directement le nom défini au sein du `docker-compose.yml` pour le service PG (= `pgsql`).
-
-🎉 Une fois connecté, vous devriez voir une base nommée `microblogging` (i.e le nom correspondant à la variable `DB_DATABASE` du `.env`). Notez que la base existe mais est vide.
-
----
-
-🟡 Initialiser la base de données, en effectuant les migrations Laravel existantes par défaut.
-
-```
+Copy code
 php artisan migrate
-```
-
-À ce stade, observez les tables créées dans votre base PG, et comprenez le lien avec les fichiers présents dans le dossier `database/migrations` du projet.
 
 
-## À propos de Laravel
 
-<p><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200" alt="Laravel Logo"></a></p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
--   [Simple, fast routing engine](https://laravel.com/docs/routing).
--   [Powerful dependency injection container](https://laravel.com/docs/container).
--   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
--   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
--   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
--   [Robust background job processing](https://laravel.com/docs/queues).
--   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-### Se familiariser avec Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
