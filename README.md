@@ -4,7 +4,7 @@
 
 ![filtres](https://github.com/violaine-drt/Balloon/blob/main/readme.gif)
 
-## Project's context and objectives
+# Project's context and objectives
 
 "Balloon" was designed and developed  as a school project, over a period of 8 days with the participation of 3 students, all beginner developers.
 
@@ -24,13 +24,13 @@ Discovering the PHP framework Laravel
 Exploring Docker containerization
 Conducting feature tests to achieve a minimum of 50% test coverage
 
-## My role in the project
+# My role in the project
 
 
 Because of the new nature of the technologies used (Laravel, Docker), a certain amount of documentation time was necessary, and we chose to use a lot of mob programming in this project to build team skills and guarantee a homogeneity of knowledge. So we did a lot of group work. What I particularly appreciated about this project was the implementation of feature tests, and the creation of new data through the MVC architecture proposed by Laravel.
 
 
-## Collaboration and Communication
+# Collaboration and Communication
 
 Collaboration between the three of us was essential to ensure the project's success. Daily meetings were held to share progress, discuss encountered challenges, and align priorities. We used a project management tool, **Trello**, to track tasks and deadlines. 
 We're particularly happy with the way we've defined our MVP, and stayed committed to it. This enabled us to stay focused on the project's pedagogical objectives and produce a minimal yet functional result, while at the same time familiarizing ourselves with the use of new technologies.
